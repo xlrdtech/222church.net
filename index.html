@@ -953,9 +953,9 @@ v.addEventListener('timeupdate',function(){var i=pick(v.currentTime);if(i!==cur)
                 <!-- Engagement Request -->
                 <div class="glass-panel p-12 md:p-16 rounded-[4rem] w-full relative reveal shine-card">
                     <div class="text-center mb-8">
-                        <h2 class="text-3xl font-black mb-2 tracking-tighter uppercase text-brand-navy dark:text-white">Engagement Request</h2>
+                        <h2 class="text-3xl font-black mb-2 tracking-tighter uppercase text-brand-navy dark:text-white">Speaking &amp; Engagement Request</h2>
                         <p class="text-base font-bold opacity-80 max-w-2xl mx-auto">
-                            Thank you for considering 222 Church, Inc. for your event. Each request is reviewed prayerfully and thoughtfully. Please submit requests at least 30 days prior to your event date.
+                            Invite Pastor Atiba Adams to preach, teach or speak at your church, conference or event. Thank you for considering 222 Church, Inc. Each request is reviewed prayerfully and thoughtfully. Please submit requests at least 30 days prior to your event date.
                         </p>
                     </div>
                     <div class="text-center">
@@ -965,12 +965,12 @@ v.addEventListener('timeupdate',function(){var i=pick(v.currentTime);if(i!==cur)
                                 <input id="e-org" type="text" placeholder="Church or Organization">
                                 <input id="e-email" type="email" placeholder="Email" required>
                                 <input id="e-phone" type="tel" placeholder="Phone">
+                                <select id="e-type" aria-label="Request type" required><option value="" disabled selected>Type of Request</option><option>Preaching</option><option>Teaching or Workshop</option><option>Conference Speaker</option><option>Youth Event</option><option>Men's Event</option><option>Other</option></select>
                                 <input id="e-event" type="text" placeholder="Event Name" required>
-                                <input id="e-date" type="date" aria-label="Event date" required>
-                            </div>
-                            <input id="e-location" type="text" placeholder="City and Venue" required>
+                                </div>
+                            <div class="grid md:grid-cols-2 gap-4"><input id="e-date" type="date" aria-label="Event date" required><input id="e-location" type="text" placeholder="City and Venue" required></div>
                             <textarea id="e-details" placeholder="Tell us about the event, audience size and theme" rows="4" class="resize-none" required></textarea>
-                            <button type="submit" class="w-full py-5 rounded-2xl font-black text-sm btn-brand shadow-xl tracking-widest uppercase shine-card">Submit Engagement Request</button>
+                            <button type="submit" class="w-full py-5 rounded-2xl font-black text-sm btn-brand shadow-xl tracking-widest uppercase shine-card">Submit Speaking Request</button>
                          </form>
                          <div class="text-center opacity-60">
                             <p class="font-black uppercase text-xs tracking-widest"><a href="/atiba-adams/">Pastor Atiba Adams, MA</a></p>
@@ -1323,6 +1323,6 @@ v.addEventListener('timeupdate',function(){var i=pick(v.currentTime);if(i!==cur)
         }
     </script>
 <script id="nl-hashroute">(function(){var v=(location.hash||'').slice(1);if(v&&document.getElementById(v+'-view')&&typeof navigate==='function')navigate(v);})();</script>
-<script>function handleEngagement(e){e.preventDefault();var g=function(i){return document.getElementById(i).value};var subject=encodeURIComponent('Engagement Request from '+g('e-name')+' ['+g('e-event')+']');var body=encodeURIComponent('Name: '+g('e-name')+'\nOrganization: '+g('e-org')+'\nEmail: '+g('e-email')+'\nPhone: '+g('e-phone')+'\nEvent: '+g('e-event')+'\nDate: '+g('e-date')+'\nLocation: '+g('e-location')+'\n\nDetails:\n'+g('e-details'));window.location.href='mailto:info@222church.net?subject='+subject+'&body='+body;e.target.reset()}</script>
+<script>function handleEngagement(e){e.preventDefault();var g=function(i){return document.getElementById(i).value};var subject=encodeURIComponent('Speaking Request ('+g('e-type')+') from '+g('e-name')+' ['+g('e-event')+']');var body=encodeURIComponent('Name: '+g('e-name')+'\nOrganization: '+g('e-org')+'\nEmail: '+g('e-email')+'\nPhone: '+g('e-phone')+'\nRequest Type: '+g('e-type')+'\nEvent: '+g('e-event')+'\nDate: '+g('e-date')+'\nLocation: '+g('e-location')+'\n\nDetails:\n'+g('e-details'));window.location.href='mailto:info@222church.net?subject='+subject+'&body='+body;e.target.reset()}</script>
 </body>
 </html>
