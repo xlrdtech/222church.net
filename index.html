@@ -469,6 +469,12 @@ s.onclick=function(e){e.stopPropagation();if(v.muted){v.muted=false;if(v.current
 v.onended=finish;d.getElementById('iskip').onclick=finish;d.getElementById('ienter').onclick=enter;
 d.getElementById('ireplay').onclick=function(){I.classList.remove('done');s.style.display='';d.getElementById('iskip').style.display='';v.currentTime=0;v.play();lab()};
 go()})();</script>
+<script id="intro222caps">(function(){var v=document.getElementById('iv'),l=document.getElementById('icl');if(!v||!l)return;
+var C=[[1.9,6.9,'Before there was a crowd,<br>there was a commission.',''],[6.9,10.6,'2 Timothy 2:2',''],[10.6,15.9,'Entrust the truth to faithful people who will teach others also.','2 Timothy 2:2'],[15.9,20.4,'This is 222 Church',''],[20.4,25.6,'A Spirit-filled, presence-focused family where the gospel is central.',''],[25.6,32.5,'We don\u2019t just attend.<br>We grow. We gather. We go.',''],[32.5,37.0,'Disciples Making Disciples',''],[37.0,99,'Welcome Home','222 Church']];
+var cur=-1,tm;function pick(t){for(var i=0;i<C.length;i++)if(t>=C[i][0]&&t<C[i][1])return i;return -1}
+function show(i){cur=i;clearTimeout(tm);l.classList.remove('on');if(i<0)return;tm=setTimeout(function(){var c=C[i];l.innerHTML=c[2]+(c[3]?'<span class="s">'+c[3]+'</span>':'');l.classList.add('on')},380)}
+v.addEventListener('timeupdate',function(){var i=pick(v.currentTime);if(i!==cur)show(i)});v.addEventListener('seeked',function(){cur=-2})})();</script>
+
 
     
     <div id="glow-container">
