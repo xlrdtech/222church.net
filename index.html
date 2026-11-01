@@ -433,6 +433,43 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"222 Church","url":"https://222church.net/","publisher":{"@id":"https://222church.net/#church"}}</script>
 </head>
 <body class="antialiased">
+<!-- 222 INTRO FRONT DOOR -->
+<style>html.intro-on,html.intro-on body{overflow:hidden}</style><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><style id="intro222">
+#intro{position:fixed;inset:0;z-index:2147483000;background:#000;overflow:hidden;transition:opacity .9s ease}
+#intro.out{opacity:0;pointer-events:none}
+#intro video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
+#intro .vg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),transparent 25%,transparent 70%,rgba(0,0,0,.6));pointer-events:none}
+#intro .snd{position:absolute;top:max(16px,env(safe-area-inset-top));right:16px;z-index:3;font:600 14px "Plus Jakarta Sans",sans-serif;color:#fff;background:rgba(15,42,92,.55);border:1px solid rgba(220,176,90,.7);border-radius:999px;padding:10px 16px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);cursor:pointer}
+#intro .snd.pulse{animation:ipulse 1.6s ease-in-out infinite}
+@keyframes ipulse{0%,100%{box-shadow:0 0 0 0 rgba(220,176,90,.6)}50%{box-shadow:0 0 0 12px rgba(220,176,90,0)}}
+#intro .skip{position:absolute;bottom:max(20px,env(safe-area-inset-bottom));right:18px;z-index:3;font:500 13px "Plus Jakarta Sans",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.75);background:none;border:0;cursor:pointer;padding:10px}
+#intro .end{position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:24px;background:radial-gradient(ellipse at center,rgba(10,29,64,.55),rgba(0,0,0,.85));opacity:0;pointer-events:none;transition:opacity 1s ease}
+#intro.done .end{opacity:1;pointer-events:auto}
+#intro .end img{width:112px;height:112px;border-radius:50%;object-fit:cover;border:2px solid #dcb05a;box-shadow:0 0 40px rgba(220,176,90,.35)}
+#intro .end h2{margin:0;font:700 clamp(28px,6vw,54px) Cinzel,serif;color:#fff;letter-spacing:.06em}
+#intro .end p{margin:0;font:400 clamp(22px,4vw,34px) "Great Vibes",cursive;color:#dcb05a}
+#intro .enter{margin-top:8px;font:700 15px "Plus Jakarta Sans",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#0a1d40;background:#dcb05a;border:0;border-radius:999px;padding:16px 34px;cursor:pointer;box-shadow:0 10px 30px rgba(220,176,90,.35)}
+#intro .replay{font:500 13px "Plus Jakarta Sans",sans-serif;color:rgba(255,255,255,.7);background:none;border:0;cursor:pointer;text-decoration:underline}
+html.intro-on,html.intro-on body{overflow:hidden}
+html.intro-on #mw{display:none!important}
+#intro .cap{position:absolute;left:0;right:0;bottom:max(18vh,110px);z-index:2;text-align:center;padding:0 7vw;pointer-events:none}
+#intro .cap .l{opacity:0;transform:translateY(14px);transition:opacity .9s ease,transform .9s ease;font:700 clamp(24px,5.4vw,52px)/1.15 Cinzel,serif;color:#fff;letter-spacing:.04em;text-shadow:0 2px 24px rgba(0,0,0,.75),0 0 2px rgba(0,0,0,.6)}
+#intro .cap .s{display:block;margin-top:10px;font:600 clamp(12px,2.2vw,16px) "Plus Jakarta Sans",sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#dcb05a;text-shadow:0 2px 14px rgba(0,0,0,.8)}
+#intro .cap .l.on{opacity:1;transform:none}
+#intro.done .cap{display:none}
+</style><div id="intro" role="dialog" aria-label="222 Church intro"><video id="iv" autoplay muted playsinline preload="auto" poster="/media/222-church-intro-poster.jpg" src="/media/222-church-intro.mp4"></video><div class="vg"></div><div class="cap" id="icap"><div class="l" id="icl"></div></div><button class="snd pulse" id="isnd">Tap for sound</button><button class="skip" id="iskip">Skip ›</button><div class="end"><img src="https://lh3.googleusercontent.com/d/1b6pWtFv7HdP3qOPIssa11B9jyUwCHjVf" alt="222 Church"><h2>222 CHURCH</h2><p>Welcome Home</p><button class="enter" id="ienter">Enter the site</button><button class="replay" id="ireplay">Watch again</button></div></div><script id="intro222js">(function(){var d=document,R=d.documentElement,I=d.getElementById('intro'),v=d.getElementById('iv'),s=d.getElementById('isnd');if(!I)return;
+var q=location.search;if(/[?&]intro=0/.test(q)){I.remove();return}
+R.classList.add('intro-on');
+function lab(){s.textContent=v.muted?'Tap for sound':'Mute';s.classList.toggle('pulse',v.muted)}
+function go(){v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){v.muted=true;v.play().catch(function(){});lab()});lab()}
+function finish(){I.classList.add('done');s.style.display='none';d.getElementById('iskip').style.display='none'}
+function enter(){I.classList.add('out');R.classList.remove('intro-on');try{v.pause()}catch(e){}setTimeout(function(){I.remove()},950);var h=d.getElementById('herovid');if(h){try{h.play()}catch(e){}}}
+s.onclick=function(e){e.stopPropagation();if(v.muted){v.muted=false;if(v.currentTime>3)v.currentTime=0;v.play()}else{v.muted=true}lab()};
+
+v.onended=finish;d.getElementById('iskip').onclick=finish;d.getElementById('ienter').onclick=enter;
+d.getElementById('ireplay').onclick=function(){I.classList.remove('done');s.style.display='';d.getElementById('iskip').style.display='';v.currentTime=0;v.play();lab()};
+go()})();</script>
+
     
     <div id="glow-container">
         <div class="glow-orb orb-1"></div>
@@ -516,13 +553,6 @@
                         </p>
                         <button onclick="navigate('connect')" class="px-14 py-4 rounded-full font-black shadow-xl btn-brand pointer-events-auto text-xs tracking-widest uppercase">Experience Presence</button>
                     </div>
-                </div>
-            </section>
-
-            <!-- Intro Video -->
-            <section id="intro-video" class="w-full max-w-5xl mx-auto px-6 pt-12 pb-4">
-                <div class="glass-panel p-4 md:p-6 rounded-[3rem] text-center shine-card reveal">
-                    <video class="w-full rounded-[2.25rem] aspect-video bg-black" src="/media/222-church-intro.mp4" poster="/media/222-church-intro-poster.jpg" controls playsinline preload="metadata" aria-label="222 Church intro video"></video>
                 </div>
             </section>
 
