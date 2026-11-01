@@ -431,6 +431,16 @@
     </style>
 <link rel="alternate" type="application/rss+xml" title="Atiba Adams · 222 Church Blog" href="https://222church.net/blog/feed.xml">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"222 Church","url":"https://222church.net/","publisher":{"@id":"https://222church.net/#church"}}</script>
+<style>
+#speak-form input,#speak-form select,#speak-form textarea{box-sizing:border-box;min-height:3.5rem;padding:1rem 1.25rem!important;font-size:.95rem;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
+#speak-form textarea{white-space:normal;overflow:auto}
+#speak-form ::placeholder{font-size:.875rem;opacity:.55}
+#speak-form select{padding-right:2.75rem!important;color:var(--brand-navy,#0F172A)!important;line-height:1.5rem}
+#speak-form select:invalid{color:rgba(15,23,42,.55)!important}
+.dark #speak-form select{color:#fff!important}
+.dark #speak-form select:invalid{color:rgba(255,255,255,.55)!important}
+#speak-form option{color:#0F172A;background:#fff}
+</style>
 </head>
 <body class="antialiased">
 <!-- 222 INTRO FRONT DOOR -->
@@ -959,17 +969,17 @@ v.addEventListener('timeupdate',function(){var i=pick(v.currentTime);if(i!==cur)
                         </p>
                     </div>
                     <div class="text-center">
-                         <form onsubmit="handleEngagement(event)" class="space-y-4 text-left mb-8">
+                         <form id="speak-form" onsubmit="handleEngagement(event)" class="space-y-4 text-left mb-8">
                             <div class="grid md:grid-cols-2 gap-4">
                                 <input id="e-name" type="text" placeholder="Your Name" required>
-                                <input id="e-org" type="text" placeholder="Church or Organization">
+                                <input id="e-org" type="text" placeholder="Organization">
                                 <input id="e-email" type="email" placeholder="Email" required>
                                 <input id="e-phone" type="tel" placeholder="Phone">
                                 <select id="e-type" aria-label="Request type" required><option value="" disabled selected>Type of Request</option><option>Preaching</option><option>Teaching or Workshop</option><option>Conference Speaker</option><option>Youth Event</option><option>Men's Event</option><option>Other</option></select>
                                 <input id="e-event" type="text" placeholder="Event Name" required>
                                 </div>
-                            <div class="grid md:grid-cols-2 gap-4"><input id="e-date" type="date" aria-label="Event date" required><input id="e-location" type="text" placeholder="City and Venue" required></div>
-                            <textarea id="e-details" placeholder="Tell us about the event, audience size and theme" rows="4" class="resize-none" required></textarea>
+                            <div class="grid md:grid-cols-2 gap-4"><input id="e-date" type="date" aria-label="Event date" required><input id="e-location" type="text" placeholder="City &amp; Venue" required></div>
+                            <textarea id="e-details" placeholder="Event details, audience size, theme" rows="4" class="resize-none" required></textarea>
                             <button type="submit" class="w-full py-5 rounded-2xl font-black text-sm btn-brand shadow-xl tracking-widest uppercase shine-card">Submit Speaking Request</button>
                          </form>
                          <div class="text-center opacity-60">
